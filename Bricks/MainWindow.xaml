@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dgTermekLista"></DataGrid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions> 
+        
+        <DataGrid Grid.Column="0" x:Name="dgTermekLista"></DataGrid>
+
+        <Button Click="Button_Click" Grid.Column="1" Height="20" VerticalAlignment="Top">Betöltés</Button>
     </Grid>
 </Window>
