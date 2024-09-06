@@ -9,6 +9,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Update="brickstore_parts_3180-1-tank-truck.bsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="brickstore_parts_3658-1-police-helicopter V1.bsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="brickstore_parts_4432-1-garbage-truck.bsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="brickstore_parts_60005-1-fire-boat.bsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="brickstore_parts_60017-1-flatbed-truck.bsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="brickstore_parts_7288-1-mobile-police-unit.bsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -20,8 +20,9 @@ namespace Bricks
         int quantity;
         double price;
         string condition;
+        int originalQuantity;
 
-        public Termek(string id, string typeId, int colorId, string name, string typeName, string colorName, int categoryId, string categoryName, string status, int quantity, double price, string condition)
+        public Termek(string id, string typeId, int colorId, string name, string typeName, string colorName, int categoryId, string categoryName, string status, int quantity, double price, string condition, int originalQuantity)
         {
             this.id = id;
             this.typeId = typeId;
@@ -35,6 +36,7 @@ namespace Bricks
             this.quantity = quantity;
             this.price = price;
             this.condition = condition;
+            //this.originalQuantity = originalQuantity;
         }
 
         public Termek(string[] aru)
@@ -51,6 +53,7 @@ namespace Bricks
             this.quantity = int.Parse(aru[9]);
             this.price = double.Parse(aru[10].Replace('.', ','));
             this.condition = aru[11];
+            //this.originalQuantity = int.Parse(aru[12]);
         }
 
         public string Id { get => id;}
@@ -65,6 +68,7 @@ namespace Bricks
         public int Quantity { get => quantity;}
         public double Price { get => price;}
         public string Condition { get => condition;}
+        public int OriginalQuantity { get => originalQuantity;}
 
 
     }
