@@ -16,14 +16,12 @@ namespace Bricks
 {
     public partial class MainWindow : Window
     {
-        ObservableCollection<Termek> termekek = new ObservableCollection<Termek>();
+        ObservableCollection<Termek> termekek = new();
+        string fileName;
         public MainWindow()
         {
             InitializeComponent();
             dgTermekLista.ItemsSource = termekek;
-
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -31,7 +29,8 @@ namespace Bricks
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "bsx files (*.bsx)|*.bsx|All files (*.*)|*.*";
             openFileDialog1.ShowDialog();
-            Betolt(openFileDialog1.FileName);
+            fileName = openFileDialog1.FileName;
+            Betolt(fileName);
             
         }
 
@@ -53,10 +52,31 @@ namespace Bricks
                         termekAdatok.Add(sorok[i + j].Substring(tol + 1, ig - tol - 1));
 
                     }
-                    termekek.Add(new Termek(termekAdatok.ToArray()));
+                    Termek ujTermerk = new Termek(termekAdatok.ToArray());
+
+                    if (txtSzuro.Text!="")
+                    {
+                        if(ujTermerk.Name.StartsWith(txtSzuro.Text)|| ujTermerk.Id.StartsWith(txtSzuro.Text))
+                        {
+                            termekek.Add(ujTermerk);
+                        }
+                    }
+                    else
+                    {
+                        termekek.Add(ujTermerk);
+                    }
+
+                    
 
                 }
             }
+        }
+
+        private void btnSzuro_Click(object sender, RoutedEventArgs e)
+        {
+            termekek = new();
+            dgTermekLista.ItemsSource = termekek;
+            Betolt(fileName);
         }
     }
 }
