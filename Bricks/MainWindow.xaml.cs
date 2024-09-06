@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Bricks
 {
@@ -19,6 +20,9 @@ namespace Bricks
         public MainWindow()
         {
             InitializeComponent();
+
+            string[] sorok = File.ReadAllLines("brickstore_parts_7288-1-mobile-police-unit.bsx");
+            MessageBox.Show(sorok[0]);
         }
     }
 }
